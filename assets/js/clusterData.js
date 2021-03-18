@@ -9,7 +9,7 @@ $(".inputButton").click
         }
     );
 
-function storeUrlCluster(number)
+function storeUrlCluster()
     {
         runtimeCluster = [];
         /*Reset runtime cluster*/
@@ -17,16 +17,16 @@ function storeUrlCluster(number)
         /* gets cluster data */
         newUrl = document.getElementById("cluster_"+number+"_link").value;
         /* gets new url */
-        runtimeCluster = oldCluster;
+        runtimeCluster = oldCluster.unshift(newUrl);
         /*adds old cluster data into runtimeCluster*/
         localStorage.setItem("cluster"+number+"Data", JSON.stringify(runtimeCluster));
-        return false;
+        return;
     }
 
 function resetCluster()
     {
-        $('#cluster_'+number+'_reset:checkbox:checked').length > 0;
-        if(resetCheck==true)
+        /*checks confirmation checkbox*/
+        if($('#cluster_'+number+'_reset:checkbox:checked').length > 0==true)
             {
                 localStorage.setItem("cluster"+number+"Data", 0);
                 return;
@@ -34,13 +34,13 @@ function resetCluster()
 
     }
 
-function launchCluster(number)
+function launchCluster()
     {
         runtimeCluster = [];
         /* resets runtime cluster */
         runtimeCluster = JSON.parse(localStorage.getItem("cluster"+number+"Data"));
         /*adds url's into runtimeCluster array*/
-        for (URL of runtimeCluster) 
+        for(URL of runtimeCluster) 
             {
                 window.open(URL);
             }
@@ -49,7 +49,7 @@ function launchCluster(number)
         /*closes the clusterpages site*/
     }
 
-function storeUrlCluster(number)
+function storeUrlCluster()
     {
         runtimeCluster = [];
         /*Reset runtime cluster*/
@@ -60,7 +60,7 @@ function storeUrlCluster(number)
         runtimeCluster = oldCluster;
         /*adds old cluster data into runtimeCluster*/
         localStorage.setItem("cluster"+number+"Data", JSON.stringify(runtimeCluster));
-        return false;
+        return;
     }
 
 /* return false found here https://stackoverflow.com/questions/47078498/javascript-add-value-from-input-box-to-array */
