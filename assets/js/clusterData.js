@@ -130,5 +130,5 @@ function loadClusterNames()
                     }
             }
     }
-/* return false found here https://stackoverflow.com/questions/47078498/javascript-add-value-from-input-box-to-array */
+    /* this adds the names of the cluster onto the buttons/*
 /*json method found here https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage */
