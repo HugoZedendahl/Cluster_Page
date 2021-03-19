@@ -53,12 +53,14 @@ $(".emailJS").click
     (function() 
         {
             
-            emailjs.send("service_po9swwo","template_34o8pkm",{
-            from_name: document.getElementById(submittedName).value;
-            message: document.getElementById(submittedMessage).value;
-            reply_to:document.getElementById(submittedEmail).value;
+            emailjs.send("service_po9swwo","template_34o8pkm",
+            {
+                from_name: document.getElementById(submittedName).value,
+                message: document.getElementById(submittedMessage).value,
+                reply_to:document.getElementById(submittedEmail).value,
+            }
         }
-    );
+    ,);
 });
 /* set's the value of number and launches function */
 function storeUrlCluster()
