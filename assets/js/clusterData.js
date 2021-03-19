@@ -58,9 +58,8 @@ $(".emailJS").click
                 from_name: document.getElementById(submittedName).value,
                 message: document.getElementById(submittedMessage).value,
                 reply_to:document.getElementById(submittedEmail).value,
-            }
-        }
-    ,);
+            });
+});
 });
 /* set's the value of number and launches function */
 function storeUrlCluster()
