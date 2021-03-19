@@ -42,3 +42,7 @@
         width: auto;
         position: justify center;
     }
+.space
+    {
+        margin-top: vh20!important;
+    }
