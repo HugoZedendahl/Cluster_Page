@@ -16,6 +16,9 @@
         border: 2px solid #858585;
         height: 40vh;
         border-radius: 2%;
+        transition: 500ms;
+        display: grid!important;
+        text-decoration: underline;
     }
 .cluster_button:hover 
     {
@@ -26,4 +29,16 @@
         border: solid;
         border-color: #858585;
         border-radius: 2%;
+    }
+.launch
+    {
+        background-image: url(../images/clusterpage-large.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+.logoName
+    {
+        max-height: 50px!important;
+        width: auto;
+        position: justify center;
     }

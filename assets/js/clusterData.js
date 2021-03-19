@@ -1,13 +1,15 @@
 var runtimeCluster = [];
 var number;
+var clusterNumbers = [1, 2, 3, 4, 5, 6];
 $( document ).ready(function() 
 {
 /* prevents functions to be launched before dom is ready*/
+loadClusterNames();
 $(".inputButton").click
     (function() 
         {
             var fired_button = $(this).val();
-            number = fired_button
+            number = fired_button;
 
         }
     );
@@ -57,11 +59,10 @@ function storeUrlCluster()
         /* gets cluster data */
         if(oldCluster==null)
             {
-                oldCluster = []
+                oldCluster = [];
             }
         newUrl = document.getElementById("cluster_"+number+"_link").value;
         /* gets new url */
-        runtimeCluster = oldCluster;
         runtimeCluster = oldCluster;
         if(runtimeCluster.length == 0) 
             {
@@ -69,7 +70,7 @@ function storeUrlCluster()
             } 
         else 
             {
-                runtimeCluster.push(newUrl)
+                runtimeCluster.push(newUrl);
             }   
         /*adds old cluster and the new url into runtimeCluster*/
         localStorage.setItem("cluster"+number+"Data", JSON.stringify(runtimeCluster));
@@ -82,9 +83,20 @@ function resetCluster()
         /*checks confirmation checkbox*/
         if($('#cluster_'+number+'_reset:checkbox:checked').length > 0==true)
             {
-                newUrl= document.getElementById("cluster_"+number+"_name").value
-                localStorage.setItem("cluster"+number+"name", newUrl);
+                if(localStorage.getItem("cluster"+number+"Name")!=undefined)
+                    {
+                        localStorage.removeItem("cluster"+number+"Name");
+                    }
+                if(localStorage.getItem("cluster"+number+"Data")!=undefined)
+                    {
+                        localStorage.removeItem("cluster"+number+"Data");
+                    }
+
                 return;
+            } 
+            else 
+            {
+                alert('Checkbox not filled');
             }
 
     }
@@ -100,14 +112,23 @@ function launchCluster()
                 window.open(URL);
             }
         /*launches websites*/
-        close();
-        /*closes the clusterpages site*/
     }
 
 function nameClusterButton()
     {
-        newName = 
-        localStorage.setItem("cluster"+number+"name", JSON.stringify(newName))
+        newName = document.getElementById("cluster_"+number+"_name").value;
+        localStorage.setItem("cluster"+number+"Name", JSON.stringify(newName));
+    }
+    
+function loadClusterNames()
+    {
+        for(let id of clusterNumbers) 
+            {
+                if(localStorage.getItem("cluster"+id+"Name")!=undefined)
+                    {
+                        $('#cluster_'+id).html(JSON.parse(localStorage.getItem("cluster"+id+"Name")));
+                    }
+            }
     }
 /* return false found here https://stackoverflow.com/questions/47078498/javascript-add-value-from-input-box-to-array */
 /*json method found here https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage */
