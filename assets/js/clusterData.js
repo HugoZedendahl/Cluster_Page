@@ -91,14 +91,14 @@ function resetCluster()
                     {
                         localStorage.removeItem("cluster"+number+"Data");
                     }
-
+                    alert("cluster "+number+" reset");
                 return;
             } 
             else 
             {
-                alert('Checkbox not filled');
+                alert("Checkbox not filled");
             }
-
+            /*alerts user if checkbox not filled*/
     }
 
 function launchCluster()
