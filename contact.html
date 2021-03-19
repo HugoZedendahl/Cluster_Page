@@ -37,6 +37,24 @@
         </div>
     </nav>
 
+    <div class="row h2 text-center space pt-5 pb-5">
+        <div class="col-md-12 px-5">get in contact</div>
+    </div>
+
+    <div class="row text-center px-5">
+        <div class="col-md-12">
+            <form>
+                <label for="submittedEmail">Email</label><br>
+                <input type="text" id="submittedEmail" class="form-control" value=""><br><br>
+                <label for="submittedName">Name</label><br>
+                <input type="text" id="submittedName" value="" class="form-control"><br><br>
+                <label for="submittedEmail">Message</label><br>
+                <textarea type="text" id="submittedMessage" class="form-control" rows="3" value=""></textarea><br><br>
+                <button id="emailJS" class="btn btn-secondary">Send Message</button><br>
+            </form>
+
+        </div>
+    </div>
 
 </div>
 <footer class="page-footer font-small p-3 bg-light">
@@ -55,6 +73,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_6LQWbPCMHk8z94zn8xlGT");
+})();
+</script>
 <script src="./assets/js/clusterData.js"></script>
 </body>
 </html>
